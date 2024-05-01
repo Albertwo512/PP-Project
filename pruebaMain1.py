@@ -252,13 +252,15 @@ def main_Free():
     
 
     # Create a container for the user input at the bottom
-    input_container = st.empty()
+    
 
 
     
     # Place the input field inside the input container
-    with input_container:
-        prompt = st.chat_message(translated_text_4)
+    
+    prompt = st.chat_input(translated_text_4)
+    if prompt:
+        input_container = st.empty()
         
         
         
