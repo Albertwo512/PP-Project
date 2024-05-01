@@ -25,7 +25,7 @@ hpack==3.0.0
 hstspreload==2023.1.1
 httpcore==0.9.1
 httpx==0.13.3
-huggingface-hub==0.22.2
+huggingface-hub==0.20.9
 hyperframe==5.2.0
 idna==2.10
 importlib-metadata==6.8.0
@@ -51,7 +51,7 @@ numexpr==2.8.5
 numpy==1.25.2
 openai==0.27.8
 openapi-schema-pydantic==1.2.4
-packaging==24
+packaging==23.2
 pandas==2.0.3
 Pillow==9.5.0
 protobuf==4.24.0
