@@ -3,6 +3,7 @@ css = '''
 .chat-container {
     display: flex;
     flex-direction: column;
+    background-color: #dcdcdc; 
 }
 
 .chat-row {
@@ -27,13 +28,13 @@ css = '''
 }
 
 .ai-bubble {
-    background: #778899;
-    color: white;
+    background: #dcdcdc;
+    color: black;
     border-radius: 10px;
 }
 
 .human-bubble {
-    background: #27b5f2;
+    background: #4169e1;
     color: white;
     border-radius: 20px;
 }
