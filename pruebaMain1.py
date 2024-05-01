@@ -258,7 +258,7 @@ def main_Free():
     
     # Place the input field inside the input container
     with input_container:
-        prompt = st.chat_input(translated_text_4)
+        prompt = st.chat_input({translated_text_4})
         
         
         
