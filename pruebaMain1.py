@@ -13,6 +13,7 @@ from langchain.llms import HuggingFaceHub
 from googletrans import Translator
 from langchain import OpenAI
 import os
+import webbrowser
 
 
 pdf_paths = [
@@ -212,6 +213,11 @@ def main_Free():
         tittle_select = "Selecciona el idioma | Select Language"
         text_thinking = "Pensando..."
         text_question = "Escribe tu pregunta aqui"
+        text_ubication = "Ubicacion..."
+        text_resta = ["eat","restaurante","alimentos","comida"]
+        text_forum = "foro"
+
+
 
         target_language = st.selectbox(f":black[{tittle_select}]", ["en", "es", "fr", "de", "it", "ja", "ko", "zh-CN"])
         
@@ -221,11 +227,25 @@ def main_Free():
         translated_text_2 = translate_text(text_to_translate2, target_language)
         translated_text_3 = translate_text(text_thinking, target_language)
         translated_text_4 = translate_text(text_question, target_language)
+        translated_text_5 = translate_text(text_ubication, target_language)
+        translated_text_6 = translate_text(text_forum, target_language)
+        
+        translated_keywords = []
 
-        st.write(
+        for keyword in text_resta:
+            print(keyword)
+            translated_keyword = translate_text(keyword, target_language)
+            translated_keywords.append(translated_keyword)
+
+        print(translated_keywords)
+
+
+    
+
+    st.write(
             f"<h1 style='text-align: center; gap: 0rem;'>{translated_text_1}</h1>",
             unsafe_allow_html=True
-        )
+        )    
 
     # Agregar contenido al segundo elemento (imagen)
     with col2:
@@ -249,30 +269,34 @@ def main_Free():
     # Create a container to hold the chat messages
     chat_container = st.empty()
     
-
-    # Create a container for the user input at the bottom
     
 
-
     
-    # Place the input field inside the input container
-    
-    prompt = st.chat_input(translated_text_4)
+    prompt = st.chat_input(translated_text_4)    
     if prompt:
-        input_container = st.empty()
-        
-        
-        
-    
-    
+        input_container = st.empty()    
 
-    # Process user input and update chat
+# Process user input and update chat
     if prompt:
         handle_userinput(prompt)
+        
+        text_chucho = "chucho reyes"
+        prompt_lower = prompt.lower()
+        prompt_words = prompt_lower.split()
+        print(prompt_lower)
+        if any(word in prompt_lower for word in translated_text_6.split()):
+            print(translated_text_6)
+            print("Eligio foro")
+            st.markdown(f'<button class="btn btn-outline-primary chat-row"><a href="https://tinyurl.com/2qyyxoz2">{translated_text_5}</a></button>', unsafe_allow_html=True) 
+        else:
+            if any(keyword in prompt_lower for keyword in translated_keywords) or any(word in prompt_lower for word in text_chucho.split()):
+                print("Eligio resta")
+                st.markdown(f'<button class="btn btn-outline-primary chat-row"><a href="https://tinyurl.com/2zo2j8hg">{translated_text_5}</a></button>', unsafe_allow_html=True)
 
+
+        
+        
     
-
-    # Add spacing at the end to push the input container to the bottom
     st.markdown('<style>div.css-1aumxhk { margin-top: auto; }</style>', unsafe_allow_html=True)
 
 
