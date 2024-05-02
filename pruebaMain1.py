@@ -270,6 +270,7 @@ def main_Free():
     chat_container = st.empty()
     
     
+    
 
     
     prompt = st.chat_input(translated_text_4)    
@@ -287,8 +288,8 @@ def main_Free():
         if any(word in prompt_lower for word in translated_text_6.split()):
             print(translated_text_6)
             print("Eligio foro")
-            st.markdown(f'<button class="btn btn-outline-primary chat-row"><a href="https://tinyurl.com/2qyyxoz2">{translated_text_5}</a></button>', unsafe_allow_html=True) 
-        else:
+            st.markdown(f'<button class="btn btn-outline-primary chat-row"><a href="https://tinyurl.com/2qyyxoz2">{translated_text_5}</a></button>', unsafe_allow_html=True)    
+        else:                        
             if any(keyword in prompt_lower for keyword in translated_keywords) or any(word in prompt_lower for word in text_chucho.split()):
                 print("Eligio resta")
                 st.markdown(f'<button class="btn btn-outline-primary chat-row"><a href="https://tinyurl.com/2zo2j8hg">{translated_text_5}</a></button>', unsafe_allow_html=True)
